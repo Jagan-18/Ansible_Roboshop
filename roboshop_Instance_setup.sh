@@ -50,20 +50,20 @@ for i in "${INSTANCES[@]}"; do
     # We use the `UPSERT` action to either create or update the record if it already exists
     aws route53 change-resource-record-sets \
         --hosted-zone-id $ZONE_ID \
-        --change-batch "
+        --change-batch '
     {
-        "Comment": "Creating a record set for cognito endpoint",
+        "Comment": "Creating a record set for cognito endpoint"
         ,"Changes": [{
-        "Action"              : "UPSERT",
+        "Action"              : "UPSERT"
         ,"ResourceRecordSet"  : {
-            "Name"              : "$i.$DOMAIN_NAME",
-            ,"Type"             : "A",
-            ,"TTL"              : 1,
+            "Name"              : "'$i'.'$DOMAIN_NAME'"
+            ,"Type"             : "A"
+            ,"TTL"              : 1
             ,"ResourceRecords"  : [{
-                "Value"         : "$IP_ADDRESS"
+                "Value"         : "'$IP_ADDRESS'"
             }]
         }
         }]
     }
-    "
+        '
 done
