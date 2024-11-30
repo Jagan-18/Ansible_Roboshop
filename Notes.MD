@@ -130,16 +130,18 @@ Ex:
 4. YAML Ain't Markup Language (key:value)
 
 email: infor@devops.com
+
 password: admi123
 
 ex: yaml format
 - name: jagadeesh
   dob: "1999-05-07"
   address: 
-    address-line1: Btm stage, main road udupe.
-    city: bangalure
+    address-line1: Btm stage.
+    city: bengaluru
   email: infro@devops.com
 
+### To run ansible playbook below command we will use. 
   ```bash
   ansible-playbook -i inventory -e ansible_user=centos -e ansible_password=DevOps321 <file_name>
   ```
