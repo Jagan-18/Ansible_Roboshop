@@ -147,6 +147,17 @@ ex: yaml format
   ```
 
 
+## command module: 
+- The command module is able to execute only the binaries on remote hosts. The command module won’t be impacted by local shell variables because it bypasses the shell. At the same time, it may not be able to run “shell” built-in features and redirections.
+
+## shell module: 
+
+- The shell Ansible module is potentially more dangerous than the command module and should only be used when you actually really need the shell functionality. So if you’re not stringing two commands together (using pipes or even just && or ;), you don’t really need the shell module. Similarly, expanding shell variables or file global requires the shell module. If you’re not using these features, don’t use the shell module. Sometimes it’s the only way, I know.
+
+
+
+
+
 
 
 

@@ -1,4 +1,3 @@
-# Play Level Variables.
 - name: variable for PLAY Level
   hosts: locahost
   vars:
